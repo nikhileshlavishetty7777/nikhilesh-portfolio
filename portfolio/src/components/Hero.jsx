@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { DEVELOPER } from "../data/portfolio";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const TECH_ICONS = [
   { icon: "⚛️", label: "React", x: "10%", y: "20%", delay: 0 },

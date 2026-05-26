@@ -3,20 +3,35 @@ import React, { useEffect, useState } from "react";
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
   const [phase, setPhase] = useState(0);
-  const phases = ["Initializing...", "Loading assets...", "Compiling portfolio...", "Ready."];
+
+  const phases = [
+    "Initializing...",
+    "Loading assets...",
+    "Compiling portfolio...",
+    "Ready."
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((p) => {
-        if (p >= 100) { clearInterval(interval); return 100; }
+        if (p >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
         return p + Math.random() * 8 + 2;
       });
     }, 80);
+
     const phaseInterval = setInterval(() => {
       setPhase((p) => Math.min(p + 1, phases.length - 1));
     }, 650);
-    return () => { clearInterval(interval); clearInterval(phaseInterval); };
-  }, []);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(phaseInterval);
+    };
+  }, [phases.length]);
+}
 
   return (
     <div className="fixed inset-0 bg-[#030303] flex flex-col items-center justify-center z-[9999]">
@@ -57,4 +72,4 @@ export default function LoadingScreen() {
       <p className="mt-3 font-mono text-xs text-white/30">{Math.min(Math.round(progress), 100)}%</p>
     </div>
   );
-}
+
