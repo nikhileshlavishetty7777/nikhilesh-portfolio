@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
   const [phase, setPhase] = useState(0);
