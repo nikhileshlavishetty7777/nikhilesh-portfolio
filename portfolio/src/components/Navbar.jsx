@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DEVELOPER } from "../data/portfolio";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
   { label: "About", href: "#about" },
